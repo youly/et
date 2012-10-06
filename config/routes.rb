@@ -1,4 +1,7 @@
 Et::Application.routes.draw do
+  resources :users
+  get "users/new"
+
   get "home/index"
 
   # The priority is based upon order of creation:
