@@ -1,6 +1,8 @@
 Et::Application.routes.draw do
+
   resources :users
   resources :sessions, only:[:new,:create,:destroy]
+  resources :teachers
 
   match '/signup', to:'users#new'
   

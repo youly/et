@@ -1,0 +1,11 @@
+<% provide(:title,'添加教师') %>
+<h1>添加教师</h1>
+<%= form_tag({:controller => "teachers", :action => "create"}, :method => "post") do %>
+	<%= label_tag(:name, "Name:") %>
+	<%= text_field_tag(:name) %>
+
+    <%= label_tag(:college, "College:") %>
+    <% college_array = College.all.map { |college| [college.name, college.id] }%>
+    <%= select_tag(:college, options_for_select(college_array)) %>
+	<button class="btn btn-primary">添加</button>
+<% end %>

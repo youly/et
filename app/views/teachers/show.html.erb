@@ -1,0 +1,5 @@
+<%= provide(:title,@teacher.name) %>
+<ul class="thumbnails">
+	<li class="span12"><h3><%= @teacher.name %></h3></li>
+	<li class="span6 detail"><%= College.find(@teacher.college).name %></li>
+</ul>

@@ -1,0 +1,24 @@
+<!-- Modal -->
+<div class="modal hide fade" id="AddTeacher">
+            
+  <div class="modal-header">
+    <a href="#" class="close" data-dismiss="modal">&times;</a>
+    <h3>添加教师</h3>
+  </div>
+  <%= form_tag({:controller => "teachers", :action => "create"}, :method => "post") do %>            
+  <div class="modal-body">
+    <%= label_tag(:name, "Name:") %>
+    <%= text_field_tag(:name) %>
+
+    <%= label_tag(:college, "College:") %>
+    <% college_array = College.all.map { |college| [college.name, college.id] }%>
+    <%= select_tag(:college, options_for_select(college_array)) %>
+    
+  </div>
+            
+  <div class="modal-footer">
+    <button class="btn" data-dismiss="modal">取消</button>
+    <button class="btn btn-primary">添加</button>
+  </div>
+  <% end %>
+</div>
