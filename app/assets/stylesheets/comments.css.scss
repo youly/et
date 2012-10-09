@@ -4,10 +4,14 @@
 
 $dimGray:#696969;
 
-.user-comment {
-	padding-left:20px;
+.content-comment {
+	padding-left:10px;  //this line is valid ,why?
 }
 
 .timestamp-comment {
   color: $dimGray;
+}
+
+.span1 {
+	margin-right:-40px;
 }

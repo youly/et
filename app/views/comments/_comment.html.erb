@@ -1,10 +1,19 @@
 <li>
-  <span class="content-comment"><%= comment.content %></span>
-  <br />
-  <span class="user-comment">
-  	<a href="<%= url_for controller:'users', action:'show', id:comment.user.id %>"><%= comment.user.name%></a>
-  </span>
-  <span class="timestamp-comment">
-    Posted <%= time_ago_in_words(comment.created_at) %> ago.
-  </span>
+  <div class="row">
+  	<div class="span1">
+  		<a href="#" title="赞成" class="tooltip-support"><i class="icon-thumbs-up icon-large"></i></a>
+  		<br />
+  		<a href="#" title="反对" class="tooltip-oppose"><i class="icon-thumbs-down"></i></a>
+  	</div>
+  	<div class="span7">
+  	    <span class="user-comment">
+	  		<a href="<%= url_for controller:'users', action:'show', id:comment.user.id %>"><%= comment.user.name%></a>
+	  	</span>
+	  	<span class="timestamp-comment">
+	    	Posted <%= time_ago_in_words(comment.created_at) %> ago.
+	  	</span>
+	  	<br />
+		<span class="content-comment"><pre><%= comment.content %></pre></span>
+  	</div>
+  <div>
 </li>

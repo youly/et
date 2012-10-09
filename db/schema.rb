@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121006145745) do
+ActiveRecord::Schema.define(:version => 20121009050020) do
 
   create_table "colleges", :force => true do |t|
     t.string "name"
@@ -21,8 +21,14 @@ ActiveRecord::Schema.define(:version => 20121006145745) do
     t.integer  "teacher_id"
     t.integer  "user_id"
     t.text     "content"
-    t.integer  "s"
-    t.integer  "o"
+    t.integer  "s",          :default => 0
+    t.integer  "o",          :default => 0
+    t.datetime "created_at",                :null => false
+    t.datetime "updated_at",                :null => false
+  end
+
+  create_table "remove_o_froms", :force => true do |t|
+    t.string   "comments"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

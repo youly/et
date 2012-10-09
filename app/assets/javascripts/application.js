@@ -14,3 +14,18 @@
 //= require jquery_ujs
 //= require_tree .
 //= require bootstrap
+
+$(document).ready(function() {
+	$(".icon-thumbs-up, .icon-thumbs-down").mouseover(function(){
+    $(this).css({'background-color': '#DCDCDC', 'border': '1px solid #ccc'});
+	//$("[rel=tooltip]").tooltip({ placement:'right'});
+	$('.tooltip-support').tooltip({ placement:'right'})
+	$('.tooltip-oppose').tooltip({ placement:'right'})
+	});
+
+	
+
+	$(".icon-thumbs-up, .icon-thumbs-down").mouseout(function(){
+    $(this).css({'background-color': '#fff', 'border': '0'});
+	});
+});
