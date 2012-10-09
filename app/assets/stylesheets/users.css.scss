@@ -1,3 +1,48 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* users index */
+
+$grayLighter: #eaeaea;
+
+$dimGray:#696969;
+$Snow3:#CDC9C9;
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
+.user-dynamic-title {
+	padding: 30px 0 0;
+	border-top: 1px solid $Snow3;
+}
+
+.user-dynamic-details {
+	list-style: none;
+	margin: 30px auto 0;
+	li {
+	    overflow: auto;
+    	padding: 10px 0;
+		  border-top: 1px solid $Snow3;
+	}
+}
+
+.timestamp-dynamic {
+  color: $dimGray; 
+}
+
+$dimGray:#696969;
+
+.content-dynamic {
+   padding-left:20px;
+}

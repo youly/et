@@ -21,6 +21,7 @@ class UsersController < ApplicationController
 
   def show
       @user=User.find(params[:id])
+      @dynamic_comments=@user.comments.paginate(page:params[:page])
   end
 
   def edit

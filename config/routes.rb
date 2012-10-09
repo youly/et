@@ -1,14 +1,20 @@
 Et::Application.routes.draw do
 
-  resources :users
+  resources :users do
+    resources :comments
+  end
   resources :sessions, only:[:new,:create,:destroy]
-  resources :teachers
-
+  
+  resources :teachers do
+    resources :comments
+  end
+#http://guides.rubyonrails.org/getting_started.html
   match '/signup', to:'users#new'
   
   match '/signin', to:'sessions#new'
   match '/signout', to:'sessions#destroy'
 
+  get 'comments/create'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

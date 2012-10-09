@@ -1,3 +1,35 @@
 // Place all the styles related to the teachers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+$Snow3:#CDC9C9;
+$grayLighter: #eaeaea;
+
+.teachers {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-top: 1px solid $grayLighter;
+    &:last-child {
+      border-bottom: 1px solid $grayLighter;
+    }
+  }
+}
+
+
+.comments {
+	list-style: none;
+	margin: 30px auto 0;
+	li {
+	    overflow: auto;
+    	padding: 10px 0;
+		  border-top: 1px solid $Snow3;
+	}
+}
+
+.teacher-comment-dynamic {
+	padding: 30px 0 0;
+	border-top: 1px solid $Snow3;
+}

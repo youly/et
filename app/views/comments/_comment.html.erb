@@ -1,0 +1,10 @@
+<li>
+  <span class="content-comment"><%= comment.content %></span>
+  <br />
+  <span class="user-comment">
+  	<a href="<%= url_for controller:'users', action:'show', id:comment.user.id %>"><%= comment.user.name%></a>
+  </span>
+  <span class="timestamp-comment">
+    Posted <%= time_ago_in_words(comment.created_at) %> ago.
+  </span>
+</li>

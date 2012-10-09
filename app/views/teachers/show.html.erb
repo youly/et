@@ -1,5 +1,25 @@
 <%= provide(:title,@teacher.name) %>
 <ul class="thumbnails">
 	<li class="span12"><h3><%= @teacher.name %></h3></li>
-	<li class="span6 detail"><%= College.find(@teacher.college).name %></li>
+	<li class="span8 detail"><%= College.find(@teacher.college).name %></li>
+	<li class="span8">
+			<% if @teacher.comments.count != 0 %>
+				<h4 class="teacher-comment-dynamic">总共有<%= @teacher.comments.count %>条评价：</h4>
+				<ul class="comments">
+					<%= render @comments %>
+				</ul>
+				<%= will_paginate @comments %>
+			<% else%>
+				<h4 class="teacher-comment-dynamic">
+					该老师暂无评价,<a href="#" onclick="document.getElementById('comment_content').focus();">添加</a>
+				</h4>
+			<% end -%> 
+	</li>
+
+	<li class="span12"><hr/></li>
+	<li class="span8"><h4 class="teacher-comment-dynamic">评价该老师：</h4></li>
+	<li class="span8"><%= render 'share/comment_form' %></li>
 </ul>
+
+
+ 

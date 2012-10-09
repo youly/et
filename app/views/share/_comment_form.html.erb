@@ -1,0 +1,5 @@
+<%= form_for([@teacher,@new_comment]) do |f| %>
+	<%= f.text_area :content,rows:4 %>
+
+	<%=f.submit "加上去", class:"btn btn-mini"%>
+<% end %>

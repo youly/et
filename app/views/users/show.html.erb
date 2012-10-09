@@ -1,3 +1,27 @@
-<% provide(:title,'show')%>
-<h1><%= @user.name %></h1>
-<p><%= @user.email %></p>
+<% provide(:title,@user.name)%>
+<ul class="thumbnails">
+	<li class="span12"><h3><%= @user.name %></h3></li>
+	<li class="span8 detail">邮箱: <%= @user.email %></li>
+	<li class="span8">
+
+			<% if @user.comments.count!=0 %>
+				<h4 class="user-dynamic-title">最近动态：</h4>
+				<ul class="user-dynamic-details">
+					<% @dynamic_comments.each do |c| %>
+						<li>
+						  <span class="timestamp-dynamic"><%= time_ago_in_words(c.created_at) %> ago,commented <a href="<%= url_for controller:'teachers', action:'show', id:c.getTeacher.id %>"><%= c.getTeacher.name%></a></span>
+						  <br /><br />
+						  <span class="content-dynamic">
+						  	<%= c.content %>
+						  </span>
+						</li>
+					<% end %>
+				</ul>
+			<% else%>
+				<h4 class="user-dynamic-title">
+					暂无动态
+				</h4>
+			<% end -%> 
+	</li>
+
+</ul>

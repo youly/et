@@ -4,8 +4,8 @@ class CreateComments < ActiveRecord::Migration
       t.integer :teacher_id
       t.integer :user_id
       t.text :content
-      t.integer :s
-      t.integer :o
+      t.integer :s, default:0
+      t.integer :o ,default:0
 
       t.timestamps
     end

@@ -1,0 +1,12 @@
+<% provide(:title, 'Teachers') %>
+<h1>All Teachers</h1>
+
+<ul class="teachers">
+  <% @teachers.each do |teacher| %>
+    <li>
+      <%= link_to teacher.name, teacher %>&nbsp;&nbsp;<small><%= teacher.getCollege%></small>
+    </li>
+  <% end %>
+</ul>
+
+<%=will_paginate %>
